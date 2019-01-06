@@ -1,0 +1,114 @@
+public class TEST {
+	public static void main(String[] args) {
+		char[] tab=new char[14];
+		char[] tab_bis=new char[14];
+		int do_a = 0, essai = 9, for_a = 0, compteur = 0;
+		char bingo ='N', complet = 'N', caractere;
+		String chaine = "vide";
+	  //char[] tab={'A','B','C','D','E','F','F','A','E','T','Y','D','G','J'};
+	  tab=MOOC.motAuSort();
+	  //System.out.println("---------");
+	  //tab_bis=MOOC.motAuSort();
+	  //System.out.println(tab + " " + tab_bis);
+	  //for(for_a = 0; for_a<14;for_a = for_a + 1)
+	  //{
+	  //   System.out.println(tab[for_a] + "=" + tab_bis[for_a]);;
+	  //}
+	  //System.out.println("");
+	  for(for_a = 0; for_a<14;for_a = for_a + 1)
+	  {
+	    //tab[for_a] = tab_bis[for_a];
+	    //System.out.println(tab[for_a] + "=" + tab_bis[for_a]);	    
+	  }
+	  //System.out.println(tab + " " + tab_bis);
+	  for(for_a = 0; for_a<14;for_a = for_a + 1)
+	  {
+	    tab_bis[for_a]='-';
+	  }
+	  for(for_a = 0; for_a<14;for_a=for_a + 1)
+	  {
+	    if(tab[do_a] != ' ')
+	    {
+	      do_a = do_a + 1;
+	    }
+	  }
+	  //while(tab[do_a] != ' ')
+	  //{
+	  // do_a = do_a + 1;
+	  //}
+	  //System.out.println("");
+	  for(for_a = 0; for_a<14;for_a = for_a + 1)
+	  {
+	    tab_bis[for_a]='-';
+	  }
+	  for(for_a = 0; for_a<14;for_a = for_a + 1)
+	  {
+	    //System.out.println(tab[for_a] + "=2=" + tab_bis[for_a]);
+	  }
+	  char[] tab2 = new char[do_a];
+	  tab2 = tab;
+	  tab = new char[do_a];
+	  tab = tab2;
+	  char[] tab_bis2 = new char[do_a];
+	  tab_bis2 = tab_bis;
+	  tab_bis = new char[do_a];
+	  tab_bis = tab_bis2;
+	  System.out.println("");
+	  for(for_a = 0; for_a<do_a;for_a = for_a + 1)
+	  {
+	   System.out.print('-');
+	   //System.out.println(tab[for_a] + "=3=" + tab_bis[for_a]);
+	  }
+	  System.out.println("");
+
+    while(essai > 0 && bingo =='N')
+    {
+      System.out.println("Quelle lettre ?");
+      caractere = MOOC.readChar();
+      for(for_a = 0; for_a<do_a;for_a = for_a + 1)
+      {
+        if(caractere == tab[for_a])
+        {
+          tab_bis[for_a] = caractere;
+          System.out.print(tab_bis[for_a]);
+          chaine = "ok";          
+        }
+        else if(caractere != tab[for_a])
+        {
+          System.out.print(tab_bis[for_a]);
+        }
+      }
+      for(for_a = 0; for_a<do_a;for_a = for_a + 1)
+      {
+        if(tab_bis[for_a]!='-')
+        {
+          compteur = compteur + 1;
+        }
+      }
+      if(compteur == do_a)
+      {
+        bingo = 'Y';
+      }
+      else if (compteur < do_a)
+      {
+        compteur = 0;
+      }
+      System.out.println("");
+      if(chaine =="vide")
+      {
+        essai = essai - 1;        
+      }
+      System.out.println("Il reste " + essai + " essais(s).");
+      chaine = "vide";
+    }
+    System.out.println("Fin des essais.");
+    if(bingo == 'Y')
+    {
+      System.out.println("bravo");
+    }
+    else if(bingo == 'N')
+    {
+      System.out.println("perdu");
+    }
+	}
+}
